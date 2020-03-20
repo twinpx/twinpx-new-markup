@@ -1,0 +1,232 @@
+@import 'vars.styl'
+@import 'mixins.styl'
+
+//Normalize
+*
+  box-sizing border-box
+  
+html {
+  font-size: 13.5pt !important;
+  line-height: 1.65 !important;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  
+  @media ( max-width 1199px ) {
+    font-size: 12pt !important;
+    line-height: 1.55 !important;
+  }
+  
+  @media ( max-width 600px ) {
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+  }
+}
+body {
+  margin: 0;
+}
+
+//Materialize
+@media only screen and (max-width: 600px)
+  .hide-on-small-only,
+  .hide-on-small-and-down
+    display none !important
+
+//Materialize override
+.container
+  max-width 100% !important
+
+  @media only screen and ( min-width: 993px )
+    width 90% !important
+
+//Placeholder
+.b-placeholder
+  display block
+  background-color #f6f6f6
+  
+  img,
+  a,
+  span
+    display none
+
+//Header
+.b-header
+  padding 66px 0 44px
+  height 170px
+  
+  @media( max-width 650px )
+    padding 25px 0
+    height  110px
+  
+.b-logo
+  .b-placeholder
+    max-width 265px
+    width 100%
+    height 60px
+    
+.b-top-menu
+  text-align right
+  
+  @media( max-width 992px )
+    display none
+  
+  &__item
+    display inline-block
+    vertical-align top
+    
+    .b-placeholder
+      width 60px
+      height 15px
+      margin-left 40px
+      
+    &:first-of-type
+      .b-placeholder
+        margin-left 0
+        
+#slide-out
+  display none
+        
+//Page
+.b-page-content
+  height calc( 100vh - 170px - 100px )
+  min-height calc( 700px - 170px - 100px )
+  
+  @media( max-width 992px )
+    height auto
+  
+  @media( max-width 600px )
+    height auto
+    min-height calc( 100vh - 110px - 150px )
+       
+//Initialized styles are here because otherwise styles from another file will download too slowly
+.b-ph-gallery.i-initialized
+  visibility hidden
+  
+.b-ajax-block
+  position absolute
+  top 0
+  left 0
+  width 100%
+
+.b-index-gallery
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  opacity 0
+  transition( opacity .3s ease )
+  padding 0 .75rem
+
+  &__text-block
+    position absolute
+    top 0
+    left 0
+    pointer-events none
+        
+  .b-button
+    opacity 0
+    transition: opacity .9s ease 1s, transform .2s ease;
+    
+  &.i-initialized .b-button
+    opacity 1
+  
+  &.i-initialized
+    position static
+    opacity 1
+    
+  .swiper-container
+    height 300px
+    overflow hidden
+    
+    &.swiper-container-initialized
+      height 100%
+      
+      @media ( max-width 650px )
+        height 350px
+      
+  .swiper-button-prev,
+  .swiper-button-next
+    display none
+
+  //these styles are here, otherwise the effect is not visible
+  &__text
+    transition( all .9s ease-out )
+    transform( translateY( 40% ))
+    opacity 0
+
+  &__ill
+    transition( transform 1.3s ease-out )
+    transform( translateX( 100% ))
+    
+//Gallery
+.b-ph-gallery
+  display flex
+  align-items center
+  height 100%
+  overflow hidden
+  
+  @media( max-width 992px )
+    display block
+    
+  .b-h1
+    margin-bottom 2.75rem
+    
+    .b-placeholder
+      max-width 166px
+      width 100%
+      height 40px
+
+  .b-h2
+    margin-bottom 1.5rem
+  
+    .b-placeholder
+      max-width 379px
+      width 100%
+      height 31px
+
+  .b-p
+    .b-placeholder
+      max-width 290px
+      width 95%
+      height 20px
+      
+  &__text
+    padding-right .75rem
+    padding-left .75rem
+    width 100%
+  
+    @media( max-width 992px )
+      margin-bottom 40px
+      
+  &__ill
+    padding-right .75rem
+    padding-left .75rem
+    width 100%
+  
+    .b-placeholder
+      padding-top 80%
+      
+.b-ajax-block.i-index-gallery
+  height 100%
+      
+//Footer
+.b-footer
+  height 100px
+  padding-top 35px
+  
+  @media( max-width 600px )
+    height 150px
+  
+  .b-placeholder
+    height 10px
+    margin-bottom 5px
+    
+  &__copyright
+    text-align right
+    
+    @media( max-width 600px )
+      text-align left
+      
+hr
+  display none

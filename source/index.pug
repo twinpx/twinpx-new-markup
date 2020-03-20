@@ -1,0 +1,31 @@
+extends ./layouts/main
+
+block title
+  title Main page | Twin px
+
+block content
+
+  .b-page-content
+  
+    .b-ph-gallery
+      .b-ph-gallery__text
+      
+        .b-h1
+          .b-placeholder
+            span Сайты
+            
+        .b-h2
+          .b-placeholder
+            span Разработка, поддержка, развитие
+            
+        .b-p
+          span.b-placeholder
+            span Мы разрабатываем веб-проекты эфективно дополняющие и развивающие бизнес наших клиентов.
+          
+      .b-ph-gallery__ill
+        .b-placeholder
+          img( src="" width="100%" height="100%" alt="" )
+          
+    .b-ajax-block.i-index-gallery( data-url="/components/index-gallery/template.html" data-method="GET" )
+    
+    

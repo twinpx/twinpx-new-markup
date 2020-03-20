@@ -1,0 +1,202 @@
+@import '../../styl/component-include.styl'
+
+.b-ajax-block
+  position static
+  top auto
+  left auto
+  width auto
+
+.swiper-container
+  opacity 0
+  
+  &.swiper-container-initialized
+    opacity 1
+
+.b-index-gallery
+  position relative
+
+  &__text
+    display none
+  
+    &-block
+      position absolute
+      top 30%
+      left 0
+      z-index 10
+      width 40%
+      min-width 340px
+      height 85%
+      transition( all .9s ease )
+      opacity 0
+      padding 0 .75rem
+      
+      .i-initialized &
+        top 15%
+        opacity 1
+        
+        @media ( max-width 1199px )
+          top 5%
+        
+      @media ( max-width 992px ) and ( min-width 651px )
+        position static
+        width auto
+        min-width 100%
+        height auto
+        top auto
+        margin-bottom 50px
+        padding 0
+        
+        hr.i-size-M
+          padding 5px 0
+          
+      @media ( max-width 650px )
+        width auto
+        min-width 100%
+        height 300px
+        top auto !important
+        
+        hr.i-size-M
+          padding 5px 0
+
+  &__ill
+    padding-top 84%
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    transition( transform .9s ease-out )
+    transform( translateX( 100% ))
+    margin 0 -.75rem
+      
+    .swiper-slide-prev &
+      transform( translateX( -100% ))
+      
+    .swiper-slide-next &
+      transform( translateX( 100% ))
+    
+    .swiper-slide-active &
+      transform( translateX(0))
+  
+    @media( min-width 1200px ) and ( max-height 790px )
+      padding-top 64%
+      
+    @media ( max-width 992px )
+      padding-top 60%
+    
+    @media ( max-width 650px )
+      display none
+    
+  .swiper-button-next,
+  .swiper-button-prev
+    width 23px
+    height 45px
+    margin-top -33px
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    transition( all .3s ease )
+    top auto
+    bottom 17px
+    right 0
+    left auto
+    
+    &:focus
+      outline none
+    
+    &:after
+      content ''
+      
+    &:hover
+      opacity .7
+    
+  .swiper-button-next
+    background-image url( './images/arrow-right.svg' )
+    display block
+      
+    @media ( max-width 992px )
+      bottom auto
+      top 50%
+      right 10px
+      
+    @media ( max-width 650px )
+      display none
+    
+  .swiper-button-prev
+    background-image url( './images/arrow-left.svg' )
+    display block
+    right 85px
+      
+    @media ( max-width 992px )
+      bottom auto
+      top 50%
+      left 10px
+      
+    @media ( max-width 650px )
+      display none
+    
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+    background-color #ff5000
+    
+  .swiper-container-horizontal > .swiper-pagination-progressbar
+    top auto
+    bottom 0
+    
+  .swiper-slide
+    overflow hidden
+    
+#indexGalleryButton
+  position absolute
+  bottom 20px
+  left .75rem
+  z-index 3
+    
+#indexGalleryText
+  padding-bottom 40px
+  pointer-events none
+  
+  @media( min-width 1200px ) and ( max-height 790px )
+    .b-h1
+      min-height 40px !important
+      font-size 1.8rem
+      
+    .b-h2
+      min-height 54px !important
+      font-size 1.1rem
+      
+    p
+      min-height 56px !important
+      font-size .8rem
+
+  @media ( min-width 993px )
+    max-height calc( 100% - 135px )
+    overflow hidden
+    
+    .b-h1
+      min-height 48px
+      
+    .b-h2
+      min-height 74px
+      
+    p
+      min-height 87px
+
+  @media ( max-width 992px )
+    
+    .b-h1
+      min-height 48px
+      
+    .b-h2
+      min-height 37px
+      
+    p
+      min-height 58px
+
+  @media ( max-width 600px )
+    
+    .b-h1
+      min-height 37px
+      
+    .b-h2
+      min-height 46px
+      
+    p
+      min-height 69px
